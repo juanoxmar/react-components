@@ -1,0 +1,19 @@
+{
+  "name": "ghrsea14-react-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanoxmar/ghrsea14-react-components.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanoxmar/ghrsea14-react-components/issues"
+  },
+  "homepage": "https://github.com/juanoxmar/ghrsea14-react-components#readme"
+}
