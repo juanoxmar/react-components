@@ -6,6 +6,7 @@ class GroceryList extends React.Component {
 
     this.state = {
       done: false,
+      hover: false
     };
   };
 
@@ -15,13 +16,27 @@ class GroceryList extends React.Component {
     })
   };
 
+  onItemHover (e) {
+    this.setState({
+      hover: !this.state.hover
+    })
+  };
+
   render() {
     const style = {
-      textDecoration: this.state.done ? 'line-through' : 'none'
+      textDecoration: this.state.done ? 'line-through' : 'none',
+      fontWeight: this.state.hover ? 'bold' : 'normal'
     }
 
     return (
-      <li style={style} onClick={this.onItemClick.bind(this)}>{this.props.groceries}</li>
+      <li 
+        style={style} 
+        onClick={this.onItemClick.bind(this)} 
+        onMouseEnter={this.onItemHover.bind(this)} 
+        onMouseLeave={this.onItemHover.bind(this)}
+      >
+        {this.props.groceries}
+      </li>
     )
   };
 }
@@ -40,19 +55,4 @@ function App() {
 }
 
 ReactDOM.render(<App />, document.getElementById("app"));
-
-// function GroceryList(props) {
-
-//   const onListClickHandler = (e) => {
-//     console.log('I got clicked');
-//   }
-
-//   const groceries = props.groceries.map((item) => <li key={item} onClick={onListClickHandler}>{item}</li>)
-
-//   return(
-//     <ul>
-//       {groceries}
-//     </ul>
-//   );
-// }
 
